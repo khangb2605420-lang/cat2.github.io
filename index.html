@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- THAY ĐỔI TẠI ĐÂY: Tiêu đề hiển thị trên thẻ tab của trình duyệt -->
+    <title>Hồ Sơ Cá Nhân - Lê Nguyễn Phúc Khang</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b132b;
+            color: #f1f5f9;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Button Styling */
+        .btn-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Timeline Dot Effect */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 19px;
+            width: 2px;
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="#hero" class="text-xl font-bold tracking-wider gradient-text">
+                    <!-- THAY ĐỔI TẠI ĐÂY: Tên ngắn / Logo chữ -->
+                    PORTFOLIO.
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
+                    <a href="#about" class="hover:text-indigo-400 transition">Giới Thiệu</a>
+                    <a href="#education" class="hover:text-indigo-400 transition">Học Tập</a>
+                    <a href="#skills" class="hover:text-indigo-400 transition">Kỹ Năng</a>
+                    <a href="#projects" class="hover:text-indigo-400 transition">Dự Án</a>
+                    <a href="#achievements" class="hover:text-indigo-400 transition">Thành Tích</a>
+                    <a href="#interests" class="hover:text-indigo-400 transition">Sở Thích</a>
+                    <a href="#contact" class="hover:text-indigo-400 transition">Liên Hệ</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle-btn" class="text-slate-300 hover:text-white p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-dropdown" class="hidden md:hidden glass-card px-4 pt-2 pb-4 space-y-2 border-t border-slate-800">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-indigo-400">Giới Thiệu</a>
+            <a href="#education" class="block py-2 text-slate-300 hover:text-indigo-400">Học Tập</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-indigo-400">Kỹ Năng</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-indigo-400">Dự Án</a>
+            <a href="#achievements" class="block py-2 text-slate-300 hover:text-indigo-400">Thành Tích</a>
+            <a href="#interests" class="block py-2 text-slate-300 hover:text-indigo-400">Sở Thích</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-indigo-400">Liên Hệ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen pt-28 pb-16 flex items-center justify-center relative overflow-hidden">
+        <!-- Glow Light Background Effect -->
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[500px] h-80 sm:h-[500px] bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center z-10">
+            <!-- Avatar -->
+            <div class="relative inline-block mb-8">
+                <!-- THAY ĐỔI TẠI ĐÂY: Thay URL ảnh đại diện của bạn vào src bên dưới -->
+                <img src="c:\Users\DELL\Downloads\1783676368506_284312153755695652_2956228672962847952_82bbc56c2865559f66fcbd8ed3c28ee2.jpg" 
+                     alt="Ảnh Đại Diện" 
+                     class="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border-4 border-indigo-500/40 shadow-2xl shadow-indigo-500/20 mx-auto transition transform hover:scale-105 duration-300">
+                <span class="absolute bottom-2 right-2 w-5 h-5 bg-emerald-500 border-2 border-slate-900 rounded-full" title="Đang sẵn sàng nhận công việc / thực tập"></span>
+            </div>
+
+            <!-- THAY ĐỔI TẠI ĐÂY: Họ và Tên -->
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+                Xin chào, tôi là <span class="gradient-text">Lê Nguyễn Phúc Khang</span>
+            </h1>
+
+            <!-- THAY ĐỔI TẠI ĐÂY: Slogan / Chuyên ngành chính -->
+            <p class="text-base sm:text-xl text-slate-300 font-light mb-8 max-w-2xl mx-auto leading-relaxed">
+                Sinh viên An toàn Thông tin năng động, đam mê sáng tạo các sản phẩm <span class="text-indigo-400 font-medium">Lập trình Web</span> & <span class="text-purple-400 font-medium">Trí tuệ Nhân tạo</span>.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="btn-gradient text-white px-7 py-3 rounded-full font-semibold shadow-lg">
+                    <i class="fa-solid fa-paper-plane mr-2"></i>Liên Hệ Ngay
+                </a>
+                <!-- THAY ĐỔI TẠI ĐÂY: Chèn đường dẫn tải CV vào href (nếu có) -->
+                <a href="#about" class="glass-card text-white px-7 py-3 rounded-full font-semibold hover:bg-slate-800 transition border border-slate-700">
+                    <i class="fa-solid fa-file-arrow-down mr-2 text-indigo-400"></i>Xem CV Của Tôi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-id-card text-indigo-400"></i> Thông Tin Cá Nhân
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Bio Card -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-400 border-b border-slate-800 pb-2">Mục Tiêu Phát Triển</h3>
+                    <!-- THAY ĐỔI TẠI ĐÂY: Đoạn văn giới thiệu ngắn về bản thân -->
+                    <p class="text-slate-300 leading-relaxed mb-4 text-sm sm:text-base">
+                        Là một sinh viên giàu nhiệt huyết, tôi luôn chủ động tìm tòi công nghệ mới và rèn luyện tư duy lập trình qua từng dự án thực tế.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        Mục tiêu ngắn hạn của tôi là hoàn thành xuất sắc chương trình Đại học, thực tập tại công ty công nghệ chuyên nghiệp và nâng cao kỹ năng làm việc nhóm.
+                    </p>
+                </div>
+
+                <!-- Personal Info List -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-400 border-b border-slate-800 pb-2">Lý Lịch Trích Ngang</h3>
+                    
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0"><i class="fa-solid fa-calendar"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-400 block">Ngày sinh</span>
+                            <!-- THAY ĐỔI TẠI ĐÂY: Ngày sinh -->
+                            <span class="text-slate-200 font-medium text-sm sm:text-base">12/06/2008</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-400 block">Địa chỉ</span>
+                            <!-- THAY ĐỔI TẠI ĐÂY: Địa chỉ -->
+                            <span class="text-slate-200 font-medium text-sm sm:text-base">Quận Ninh Kiều, TP. Cần Thơ</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-400 block">Email</span>
+                            <!-- THAY ĐỔI TẠI ĐÂY: Email cá nhân -->
+                            <a href="mailto:lenguyenphuckhang2000@gmail.com" class="text-indigo-400 hover:underline font-medium text-sm sm:text-base">lenguyenphuckhang2000@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-400 block">Số điện thoại</span>
+                            <!-- THAY ĐỔI TẠI ĐÂY: Số điện thoại -->
+                            <span class="text-slate-200 font-medium text-sm sm:text-base">0907 565 035</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Timeline Section -->
+    <section id="education" class="py-16 px-4 bg-slate-900/40">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-graduation-cap text-indigo-400"></i> Quá Trình Học Tập
+            </h2>
+
+            <div class="relative pl-6 timeline-line space-y-8">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-6">
+                    <div class="absolute -left-[31px] top-1 w-5 h-5 rounded-full bg-indigo-500 border-4 border-slate-900"></div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <!-- THAY ĐỔI TẠI ĐÂY: Niên khóa -->
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-300">2026 - Hiện tại</span>
+                        <!-- THAY ĐỔI TẠI ĐÂY: Tên trường đại học / cao đẳng -->
+                        <h3 class="text-lg font-bold text-white mt-2">Trường Đại Học Cần Thơ</h3>
+                        <!-- THAY ĐỔI TẠI ĐÂY: Chuyên ngành & GPA -->
+                        <p class="text-sm text-indigo-400 font-medium">Ngành: An toàn Thông tin</p>
+                        <p class="text-xs text-slate-400 mt-2">Điểm trung bình tích lũy (GPA): 3.5 / 4.0 - Đạt loại Giỏi.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-6">
+                    <div class="absolute -left-[31px] top-1 w-5 h-5 rounded-full bg-slate-600 border-4 border-slate-900"></div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <!-- THAY ĐỔI TẠI ĐÂY: Niên khóa cấp 3 -->
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-700 text-slate-300">2022 - 2025</span>
+                        <!-- THAY ĐỔI TẠI ĐÂY: Tên trường THPT -->
+                        <h3 class="text-lg font-bold text-white mt-2">Trường THPT Phan Văn Trị</h3>
+                        <p class="text-sm text-slate-400">Tốt nghiệp THPT loại Giỏi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-layer-group text-indigo-400"></i> Lĩnh Vực Chuyên Môn & Kỹ Năng
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Hard Skills with Progress Bars -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl">
+                    <h3 class="text-lg font-bold mb-6 text-indigo-400 flex items-center gap-2">
+                        <i class="fa-solid fa-code"></i> Kỹ Năng Lập Trình
+                    </h3>
+
+                    <div class="space-y-5">
+                        <!-- THAY ĐỔI TẠI ĐÂY: Tên kỹ năng 1 & % tương ứng trong style width -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span>HTML5 / CSS3 / Tailwind CSS</span>
+                                <span class="text-indigo-400">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <!-- THAY ĐỔI TẠI ĐÂY: Tên kỹ năng 2 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span>JavaScript (ES6+) / ReactJS</span>
+                                <span class="text-indigo-400">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <!-- THAY ĐỔI TẠI ĐÂY: Tên kỹ năng 3 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span>Python / Node.js</span>
+                                <span class="text-indigo-400">70%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+
+                        <!-- THAY ĐỔI TẠI ĐÂY: Tên kỹ năng 4 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span>SQL / MySQL Database</span>
+                                <span class="text-indigo-400">75%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills & Tools -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold mb-6 text-indigo-400 flex items-center gap-2">
+                            <i class="fa-solid fa-users-gear"></i> Kỹ Năng Mềm & Công Cụ
+                        </h3>
+
+                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Công cụ làm việc:</h4>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <!-- THAY ĐỔI TẠI ĐÂY: Badges công cụ -->
+                            <span class="px-3 py-1 bg-slate-800 text-indigo-300 text-xs font-medium rounded-lg border border-slate-700">Git & GitHub</span>
+                            <span class="px-3 py-1 bg-slate-800 text-indigo-300 text-xs font-medium rounded-lg border border-slate-700">VS Code</span>
+                            <span class="px-3 py-1 bg-slate-800 text-indigo-300 text-xs font-medium rounded-lg border border-slate-700">Figma (UI/UX)</span>
+                            <span class="px-3 py-1 bg-slate-800 text-indigo-300 text-xs font-medium rounded-lg border border-slate-700">Postman</span>
+                        </div>
+
+                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Kỹ năng bổ trợ:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <!-- THAY ĐỔI TẠI ĐÂY: Badges kỹ năng mềm -->
+                            <span class="px-3 py-1 bg-slate-800 text-emerald-300 text-xs font-medium rounded-lg border border-slate-700">Làm việc nhóm</span>
+                            <span class="px-3 py-1 bg-slate-800 text-emerald-300 text-xs font-medium rounded-lg border border-slate-700">Giải quyết vấn đề</span>
+                            <span class="px-3 py-1 bg-slate-800 text-emerald-300 text-xs font-medium rounded-lg border border-slate-700">Thuyết trình báo cáo</span>
+                            <span class="px-3 py-1 bg-slate-800 text-emerald-300 text-xs font-medium rounded-lg border border-slate-700">Quản lý thời gian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-4 bg-slate-900/40">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-diagram-project text-indigo-400"></i> Dự Án & Kinh Nghiệm
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="glass-card p-6 rounded-2xl hover:border-indigo-500/50 transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 bg-slate-800 px-2.5 py-1 rounded border border-slate-700">Đồ án môn học</span>
+                    </div>
+                    <!-- THAY ĐỔI TẠI ĐÂY: Tên dự án 1 -->
+                    <h3 class="text-lg font-bold text-white mb-2">Website Bán Hàng Trực Tuyến</h3>
+                    <!-- THAY ĐỔI TẠI ĐÂY: Mô tả dự án -->
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Xây dựng giao diện trang web mua sắm trực tuyến hỗ trợ giỏ hàng, tìm kiếm sản phẩm và trang quản trị đơn hàng.
+                    </p>
+                    <div class="text-xs text-slate-500 pt-3 border-t border-slate-800 flex justify-between items-center">
+                        <span>Công nghệ: React, Node.js, Express</span>
+                        <a href="https://github.com" target="_blank" class="text-indigo-400 hover:underline">GitHub <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card p-6 rounded-2xl hover:border-indigo-500/50 transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 bg-slate-800 px-2.5 py-1 rounded border border-slate-700">Dự án cá nhân</span>
+                    </div>
+                    <!-- THAY ĐỔI TẠI ĐÂY: Tên dự án 2 -->
+                    <h3 class="text-lg font-bold text-white mb-2">Ứng Dụng Quản Lý Công Việc (Task Manager)</h3>
+                    <!-- THAY ĐỔI TẠI ĐÂY: Mô tả dự án -->
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                        Ứng dụng ghi chú và phân loại công việc hàng ngày theo tiến độ, tích hợp nhắc nhở và giao diện tối ưu di động.
+                    </p>
+                    <div class="text-xs text-slate-500 pt-3 border-t border-slate-800 flex justify-between items-center">
+                        <span>Công nghệ: HTML/CSS, JavaScript, LocalStorage</span>
+                        <a href="https://github.com" target="_blank" class="text-indigo-400 hover:underline">GitHub <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-award text-amber-400"></i> Thành Tích & Chứng Chỉ
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Achievement 1 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <!-- THAY ĐỔI TẠI ĐÂY: Thành tích 1 -->
+                    <h3 class="font-bold text-white mb-1">Học Bổng Khuyến Khích</h3>
+                    <p class="text-xs text-indigo-400 mb-2">Năm học 2023 - 2024</p>
+                    <p class="text-xs text-slate-400">Đạt thành tích học tập đạt loại xuất sắc cấp Trường.</p>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <!-- THAY ĐỔI TẠI ĐÂY: Chứng chỉ 2 -->
+                    <h3 class="font-bold text-white mb-1">Chứng Chỉ TOEIC 700</h3>
+                    <p class="text-xs text-indigo-400 mb-2">Cấp năm 2023</p>
+                    <p class="text-xs text-slate-400">Đọc hiểu tài liệu tiếng Anh chuyên ngành thành thạo.</p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <!-- THAY ĐỔI TẠI ĐÂY: Thành tích 3 -->
+                    <h3 class="font-bold text-white mb-1">Sinh Viên 5 Tốt</h3>
+                    <p class="text-xs text-indigo-400 mb-2">Cấp Khoa / Trường năm 2023</p>
+                    <p class="text-xs text-slate-400">Tuyên dương sinh viên có phong trào toàn diện.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="py-16 px-4 bg-slate-900/40">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-heart text-rose-500"></i> Sở Thích Cá Nhân
+            </h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                <!-- THAY ĐỔI TẠI ĐÂY: Các ô sở thích -->
+                <div class="glass-card p-5 rounded-2xl hover:scale-105 transition transform">
+                    <i class="fa-solid fa-book-open text-2xl text-indigo-400 mb-2"></i>
+                    <h3 class="font-medium text-slate-200 text-sm">Đọc Sách Công Nghệ</h3>
+                </div>
+                <div class="glass-card p-5 rounded-2xl hover:scale-105 transition transform">
+                    <i class="fa-solid fa-code text-2xl text-purple-400 mb-2"></i>
+                    <h3 class="font-medium text-slate-200 text-sm">Lập Trình Đồ Họa</h3>
+                </div>
+                <div class="glass-card p-5 rounded-2xl hover:scale-105 transition transform">
+                    <i class="fa-solid fa-music text-2xl text-emerald-400 mb-2"></i>
+                    <h3 class="font-medium text-slate-200 text-sm">Nghe Nhạc Lo-Fi</h3>
+                </div>
+                <div class="glass-card p-5 rounded-2xl hover:scale-105 transition transform">
+                    <i class="fa-solid fa-person-running text-2xl text-amber-400 mb-2"></i>
+                    <h3 class="font-medium text-slate-200 text-sm">Chạy Bộ Thể Thao</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-16 px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-3 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-envelope-open-text text-indigo-400"></i> Gửi Tin Nhắn Cho Tôi
+            </h2>
+            <p class="text-center text-slate-400 text-xs sm:text-sm mb-10">Tôi sẽ phản hồi tin nhắn của bạn trong thời gian sớm nhất!</p>
+
+            <form id="contact-form" class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Họ và tên</label>
+                        <input type="text" required placeholder="Nguyễn Văn B" class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Email của bạn</label>
+                        <input type="email" required placeholder="email@example.com" class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 mb-1">Tiêu đề</label>
+                    <input type="text" required placeholder="Cơ hội thực tập / Trao đổi công việc" class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 mb-1">Nội dung tin nhắn</label>
+                    <textarea rows="4" required placeholder="Nhập lời nhắn của bạn tại đây..." class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full btn-gradient text-white py-3 rounded-lg font-semibold shadow-lg">
+                    Gửi Lời Nhắn <i class="fa-solid fa-paper-plane ml-1"></i>
+                </button>
+            </form>
+
+            <!-- Success Message Toast (Custom notification) -->
+            <div id="toast" class="hidden fixed bottom-6 right-6 bg-emerald-600 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3 z-50">
+                <i class="fa-solid fa-circle-check text-xl"></i>
+                <span class="text-sm">Gửi tin nhắn thành công! Cảm ơn bạn đã liên hệ.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-8 border-t border-slate-800/80 text-center text-xs text-slate-500">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <!-- THAY ĐỔI TẠI ĐÂY: Tên bản quyền của bạn -->
+            <p>© 2026 Nguyễn Văn A. All rights reserved.</p>
+            
+            <!-- Social Network Links -->
+            <div class="flex space-x-5 text-base">
+                <!-- THAY ĐỔI TẠI ĐÂY: Thay URL trang cá nhân GitHub, LinkedIn, Facebook của bạn -->
+                <a href="https://github.com" target="_blank" class="text-slate-400 hover:text-white transition" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="text-slate-400 hover:text-blue-400 transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://facebook.com" target="_blank" class="text-slate-400 hover:text-indigo-400 transition" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-toggle-btn');
+        const mobileMenu = document.getElementById('mobile-dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Auto close mobile dropdown on link click
+        document.querySelectorAll('#mobile-dropdown a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Handling with Toast notification
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            
+            // Show toast message
+            toast.classList.remove('hidden');
+            this.reset();
+            
+            // Auto hide toast after 3.5 seconds
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        });
+    </script>
+</body>
+</html>
